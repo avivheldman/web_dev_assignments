@@ -1,0 +1,27 @@
+###
+POST http://localhost:3001/post
+Content-Type: application/json
+
+{
+  "title": "My First Post",
+  "content": "This is the content of my first post",
+  "sender": "user123"
+}
+
+###
+POST http://localhost:3001/post
+Content-Type: application/json
+
+{
+  "title": "Second Post",
+  "content": "This is another post with different content",
+  "sender": "user456"
+}
+
+###
+POST http://localhost:3001/post
+Content-Type: application/json
+
+{
+  "title": "Incomplete Post"
+}
