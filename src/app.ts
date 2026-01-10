@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import mongoose from 'mongoose';
 import postsRouter from './routes/posts';
+import commentsRouter from './routes/comments';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -14,6 +15,7 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.use('/post', postsRouter);
+app.use('/comment', commentsRouter);
 
 mongoose
   .connect(MONGODB_URI)
