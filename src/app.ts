@@ -16,3 +16,15 @@ app.get('/', (req: Request, res: Response) => {
 
 app.use('/post', postsRouter);
 app.use('/comment', commentsRouter);
+
+// Connect to MongoDB and start server
+mongoose.connect(MONGODB_URI)
+  .then(() => {
+    console.log('Connected to MongoDB');
+    app.listen(PORT, () => {
+      console.log(`Server is running on http://localhost:${PORT}`);
+    });
+  })
+  .catch((error) => {
+    console.error('MongoDB connection error:', error);
+  });
